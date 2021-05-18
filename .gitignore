@@ -1,0 +1,8 @@
+.vscode
+
+*.o
+*.a
+*.so
+
+.DS_STORE
+
