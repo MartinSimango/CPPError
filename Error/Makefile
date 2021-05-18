@@ -15,7 +15,7 @@ ERROR_DLIB_SOURCES = $(ERROR_SOURCES)
 
 ERROR_DEPS = $(patsubst %, %/*, $(IDIR)) 
 
-build: build-dir $(ERROR_OBJECTS) build-lib install
+build: build-dir $(ERROR_OBJECTS) build-lib
 
 build-dir:
 	mkdir -p $(ODIR)
