@@ -2,6 +2,7 @@
 #include <ErrorWrapper.h>
 #include <Error.hpp>
 #include <stdio.h>
+#include <ErrorCustom.hpp>
 
 ErrorBase* AsError(void* err) { 
     return reinterpret_cast<ErrorBase*>(err); 

@@ -9,4 +9,3 @@
 #define STRING_TYPE 3
 #define DOUBLE_TYPE 4
 #define PTR_TYPE 5
-#define CREATE_RESPONSE_TYPE 6
