@@ -34,6 +34,11 @@ install:
 	cp $(LDIR)/$(LIBNAME).so /usr/local/lib
 	cp include/* /usr/local/include
 
+install-docker:
+	rm -f /usr/local/lib/$(LIBNAME).so
+	cp $(LDIR)/$(LIBNAME).so /usr/local/lib
+	cp include/* /usr/include
+
 clean:
 	rm -rf $(ODIR)
 	rm -rf $(LDIR)
