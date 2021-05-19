@@ -15,6 +15,9 @@ build: $(SUBDIRS)
 install: 
 	$(MAKE) install -C Error
 
+install-docker: 
+	$(MAKE) install-docker -C Error
+
 clean: $(SUBDIRS_CLEAN)
 
 
