@@ -5,6 +5,7 @@ extern "C" {
 
 #include <stdbool.h>
 #include <ErrorConstants.h>
+#include <ErrorCustom.h>
 
 void DestroyError(void *err);
 
