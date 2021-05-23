@@ -36,10 +36,10 @@ double GetFuncReturnValue_Double(void *err) {
     return *AsError(err)->getFunctionReturnValue<double>();
 }
 
-void* GetFuncReturnValue_Ptr(void * err, int type) {
-    switch (type)
+void* GetFuncReturnValue_Struct(void * err, enum StructTypes structTypeId) {
+    switch (structTypeId)
     {
-    case CREATE_RESPONSE_TYPE:
+    case CREATE_RESPONSE_STRUCT_TYPE:
        return AsError(err)->getFunctionReturnValue<CreateResponseStruct>();
     }
     return (void *) (NULL);

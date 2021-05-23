@@ -1,10 +1,11 @@
 #pragma once
 #include <iostream>
 #include <exception>
+#include <ErrorConstants.h>
 
 
 namespace error
- {
+{
 
     class ErrorException : public std::exception {
         

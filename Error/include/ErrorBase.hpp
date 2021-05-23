@@ -1,20 +1,22 @@
 #pragma once
 #include <stdio.h>
+#include <ErrorConstants.h>
+#include <memory>
 
 class ErrorBase {
 
     protected:
-    char *errorMessage;
+    char * errorMessage;
+    std::shared_ptr<void> retVal;
     int funcReturnType;
-    void * retVal;
-
+ 
     virtual void setFunctionReturnType() = 0;
 
     public:
 
     ErrorBase(){
         errorMessage = NULL;
-        funcReturnType = -1;
+        funcReturnType = UNKNOWN_TYPE;
     }
 
     virtual ~ErrorBase(){ }
@@ -24,7 +26,7 @@ class ErrorBase {
     }
    
     template<typename RetVal> RetVal* getFunctionReturnValue(){
-        return reinterpret_cast<RetVal *>(retVal);
+        return reinterpret_cast<RetVal *>(retVal.get());
     }
 
     virtual int getFunctionReturnType() {

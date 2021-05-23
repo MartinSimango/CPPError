@@ -9,7 +9,6 @@ struct MemberFunctionPtr
     using Type = RetVal(Object::*)(Args...);
 };
 
-
 template<typename RetVal, typename ...Args>
 struct FunctionPtr
 {

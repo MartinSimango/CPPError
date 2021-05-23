@@ -7,6 +7,7 @@ SDIR=src
 CFLAGS=$(patsubst %, -I%, $(IDIR)) -std=c++17
 LIBNAME=libgoerror
 
+.PHONY: $(ERROR_UNINSTALL_HEADERS)
 
 ERROR_SOURCES=$(wildcard $(SDIR)/*.cpp)
 ERROR_OBJECTS=$(patsubst $(SDIR)/%.cpp, $(ODIR)/%.o, $(ERROR_SOURCES))
@@ -14,6 +15,13 @@ ERROR_OBJECTS=$(patsubst $(SDIR)/%.cpp, $(ODIR)/%.o, $(ERROR_SOURCES))
 ERROR_DLIB_SOURCES = $(ERROR_SOURCES)
 
 ERROR_DEPS = $(patsubst %, %/*, $(IDIR)) 
+
+ERROR_HEADERS = $(wildcard $(IDIR)/*)
+
+ERROR_UNINSTALL_HEADERS  = $(patsubst $(IDIR)/%, %, $(ERROR_HEADERS)) 
+
+$(ERROR_UNINSTALL_HEADERS):
+	rm -rf /usr/local/include/$@
 
 build: build-dir $(ERROR_OBJECTS) build-lib
 
@@ -33,6 +41,9 @@ install:
 	rm -f /usr/local/lib/$(LIBNAME).so
 	cp $(LDIR)/$(LIBNAME).so /usr/local/lib
 	cp include/* /usr/local/include
+
+uninstall: $(ERROR_UNINSTALL_HEADERS)
+
 
 install-docker:
 	rm -f /usr/local/lib/$(LIBNAME).so

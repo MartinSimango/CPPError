@@ -3,9 +3,23 @@
 #define ERROR_MAX_LENGTH 100
 
 // Function return types
-#define VOID_TYPE 0
-#define INT_TYPE 1
-#define BOOL_TYPE 2
-#define STRING_TYPE 3
-#define DOUBLE_TYPE 4
-#define PTR_TYPE 5
+
+enum dataTypes {
+    UNKNOWN_TYPE,
+    VOID_TYPE,
+    CHAR_TYPE,
+    BOOL_TYPE,
+    INT_TYPE,
+    FLOAT_TYPE,
+    DOUBLE_TYPE,
+    STRING_TYPE, 
+    VOID_PTR_TYPE,
+    CHAR_PTR_TYPE,
+    BOOL_PTR_TYPE,
+    INT_PTR_TYPE,
+    FLOAT_PTR_TYPE,
+    DOUBLE_PTR_TYPE,
+    STRING_PTR_TYPE
+
+};
+

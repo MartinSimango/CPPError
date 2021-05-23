@@ -21,8 +21,9 @@ char * GetFuncReturnValue_String(void *err);
 
 double GetFuncReturnValue_Double(void *err);
 
-void* GetFuncReturnValue_Ptr(void * err, int type);
+void* GetFuncReturnValue_Struct(void * err, enum StructTypes structTypeId);
 
 #ifdef __cplusplus
 }  // extern "C"
 #endif
+ 
