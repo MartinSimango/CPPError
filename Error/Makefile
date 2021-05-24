@@ -7,7 +7,7 @@ SDIR=src
 CFLAGS=$(patsubst %, -I%, $(IDIR)) -std=c++17
 LIBNAME=libgoerror
 
-.PHONY: $(ERROR_UNINSTALL_HEADERS)
+.PHONY: $(ERROR_UNINSTALL_HEADERS) clean
 
 ERROR_SOURCES=$(wildcard $(SDIR)/*.cpp)
 ERROR_OBJECTS=$(patsubst $(SDIR)/%.cpp, $(ODIR)/%.o, $(ERROR_SOURCES))
