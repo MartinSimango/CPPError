@@ -15,7 +15,7 @@ ERROR_OBJECTS=$(patsubst $(SDIR)/%.cpp, $(ODIR)/%.o, $(ERROR_SOURCES))
 
 ERROR_DLIB_SOURCES = $(ERROR_SOURCES)
 
-ERROR_DEPS = $(patsubst %, %/*, $(IDIR)) 
+ERROR_DEPS = $(wildcard $(IDIR)/*) 
 
 ERROR_HEADERS = $(wildcard $(INCDIR)/*)
 
