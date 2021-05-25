@@ -3,9 +3,9 @@
 #include <type_traits>
 #include <string.h>
 #include <iostream>
-#include <Delegate.hpp>
-#include <ErrorBase.hpp>
-#include <ErrorException.hpp>
+#include <cpperror/Delegate.hpp>
+#include <cpperror/ErrorBase.hpp>
+#include <cpperror/ErrorException.hpp>
 
 
 namespace error {

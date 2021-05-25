@@ -1,8 +1,8 @@
 
-#include <ErrorWrapper.h>
-#include <Error.hpp>
+#include <cpperror/ErrorWrapper.h>
+#include <cpperror/Error.hpp>
 #include <stdio.h>
-#include <ErrorCustom.h>
+#include <cpperror/ErrorCustom.h>
 
 ErrorBase* AsError(void* err) { 
     return reinterpret_cast<ErrorBase*>(err); 

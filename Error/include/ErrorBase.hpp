@@ -1,6 +1,6 @@
 #pragma once
 #include <stdio.h>
-#include <ErrorConstants.h>
+#include <cpperror/ErrorConstants.h>
 #include <memory>
 
 class ErrorBase {

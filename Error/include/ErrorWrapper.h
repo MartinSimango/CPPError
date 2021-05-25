@@ -4,8 +4,8 @@ extern "C" {
 #endif
 
 #include <stdbool.h>
-#include <ErrorConstants.h>
-#include <ErrorCustom.h>
+#include <cpperror/ErrorConstants.h>
+#include <cpperror/ErrorCustom.h>
 
 void DestroyError(void *err);
 
