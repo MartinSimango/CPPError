@@ -8,7 +8,7 @@ INCDIR=include
 CFLAGS=$(patsubst %, -I%, $(IDIR)) -std=c++17
 LIBNAME=libgoerror
 
-.PHONY: $(ERROR_UNINSTALL_HEADERS) clean
+.PHONY: $(ERROR_UNINSTALL_HEADERS) $(ERROR_OBJECTS) clean
 
 ERROR_SOURCES=$(wildcard $(SDIR)/*.cpp)
 ERROR_OBJECTS=$(patsubst $(SDIR)/%.cpp, $(ODIR)/%.o, $(ERROR_SOURCES))
