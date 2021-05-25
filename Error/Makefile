@@ -52,9 +52,8 @@ uninstall: $(ERROR_UNINSTALL_HEADERS)
 	rm -f /usr/local/lib/$(LIBNAME).so
 
 install-docker:
-	rm -f /usr/local/lib/$(LIBNAME).so
+	rm -f /usr/lib/$(LIBNAME).so
 	cp $(LDIR)/$(LIBNAME).so /usr/local/lib
-	cp include/* /usr/include/cpperror
 
 clean:
 	rm -rf $(ODIR)
