@@ -12,7 +12,7 @@ namespace error
         public:
             ErrorException() : std::exception(){}
             
-            virtual char * getErrorMessage(char * error) = 0;
+            virtual std::string getErrorMessage() = 0;
         
     };
 

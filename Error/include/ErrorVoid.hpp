@@ -32,7 +32,8 @@ namespace error {
 
 
             ~Error() {
-                delete errorMessage;
+                std::cout<< "ERROR VOID DES" <<std::endl;
+
             }
         
 
@@ -42,8 +43,9 @@ namespace error {
                     (object->*memberFunctionPtr)(std::forward<Args>(args)...);
                 }  
                 catch(ErrorException *e){
-                    errorMessage = new char[10];
-                    e->getErrorMessage(errorMessage);
+                    delete this->errorMessage;
+                    errorMessage = NULL;
+                    this->errorMessage = new std::string(e->getErrorMessage());
                     delete e;
                 }
             }

@@ -52,7 +52,10 @@ namespace error {
         }
 
 
-        ~Error() {}
+        ~Error() {
+            std::cout<< "ERROR DES" <<std::endl;
+
+        }
     
 
         virtual void Execute(Args... args) override
@@ -64,9 +67,10 @@ namespace error {
                     
             }
             catch(ErrorException * e){
-                errorMessage = new char[ERROR_MAX_LENGTH];
-                e->getErrorMessage(errorMessage);
-                retVal = tempVal;
+                delete this->errorMessage;
+                errorMessage = NULL;
+                this->errorMessage = new std::string(e->getErrorMessage());
+             
                 delete e;
             }
             

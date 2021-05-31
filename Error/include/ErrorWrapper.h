@@ -9,7 +9,7 @@ extern "C" {
 
 void DestroyError(void *err);
 
-char * GetErrorMessage(void *err);
+const char * GetErrorMessage(void *err);
 
 int GetFuncReturnType(void *err);
 

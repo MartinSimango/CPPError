@@ -12,8 +12,12 @@ void DestroyError(void *err) {
     AsError(err)->~ErrorBase();
 }
 
-char * GetErrorMessage(void *err) {
-    return AsError(err)->getErrorMessage();
+const char * GetErrorMessage(void *err) {
+    std::string * errorMessage = AsError(err)->getErrorMessage();
+    
+    if(errorMessage)
+        return (*errorMessage).c_str();
+    return NULL;
 }
 
 int GetFuncReturnType(void *err){

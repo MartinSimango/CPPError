@@ -2,26 +2,35 @@
 #include <stdio.h>
 #include <cpperror/ErrorConstants.h>
 #include <memory>
+#include <iostream>
 
-class ErrorBase {
+class ErrorBase { 
 
     protected:
-    char * errorMessage;
+    std::string *errorMessage;
     std::shared_ptr<void> retVal;
     int funcReturnType;
  
-    virtual void setFunctionReturnType() = 0;
+    virtual void setFunctionReturnType() {
+        funcReturnType = UNKNOWN_TYPE;
+    }
 
     public:
 
     ErrorBase(){
+        setFunctionReturnType();
         errorMessage = NULL;
-        funcReturnType = UNKNOWN_TYPE;
+
     }
 
-    virtual ~ErrorBase(){ }
+    virtual ~ErrorBase(){ 
+                std::cout << "ERROR BASE DES" <<std::endl;
+
+        delete errorMessage;
+        errorMessage =  NULL;
+    }
     
-    virtual char * getErrorMessage() const {
+    virtual std::string* getErrorMessage() const {
         return errorMessage;
     }
    
