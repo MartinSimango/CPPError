@@ -32,7 +32,7 @@ namespace error {
                     funcReturnType = BOOL_TYPE;
                 }
 
-                else if (std::is_same<RetVal, char *>::value || std::is_same<RetVal, std::string>::value) {
+                else if (std::is_same<RetVal, char *>::value || std::is_same<RetVal, const char *>::value || std::is_same<RetVal, std::string>::value) {
                     funcReturnType = STRING_TYPE;
                 }
 
@@ -52,10 +52,7 @@ namespace error {
         }
 
 
-        ~Error() {
-            std::cout<< "ERROR DES" <<std::endl;
-
-        }
+        ~Error() { }
     
 
         virtual void Execute(Args... args) override
@@ -64,7 +61,6 @@ namespace error {
 
             try {
                 retVal = std::make_shared<RetVal>((object->*memberFunctionPtr)(std::forward<Args>(args)...));
-                    
             }
             catch(ErrorException * e){
                 delete this->errorMessage;

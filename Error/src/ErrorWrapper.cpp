@@ -14,7 +14,7 @@ void DestroyError(void *err) {
 
 const char * GetErrorMessage(void *err) {
     std::string * errorMessage = AsError(err)->getErrorMessage();
-    
+
     if(errorMessage)
         return (*errorMessage).c_str();
     return NULL;
@@ -32,8 +32,8 @@ bool GetFuncReturnValue_Bool(void *err) {
     return *AsError(err)->getFunctionReturnValue<bool>();
 }
 
-char * GetFuncReturnValue_String(void *err) {
-    return *AsError(err)->getFunctionReturnValue<char *>();
+const char * GetFuncReturnValue_String(void *err) {
+    return AsError(err)->getFunctionReturnValue<std::string>()->c_str();
 }
 
 double GetFuncReturnValue_Double(void *err) {

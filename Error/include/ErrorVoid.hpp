@@ -31,10 +31,7 @@ namespace error {
             }
 
 
-            ~Error() {
-                std::cout<< "ERROR VOID DES" <<std::endl;
-
-            }
+            ~Error() { }
         
 
             virtual void Execute(Args... args) override

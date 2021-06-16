@@ -24,8 +24,6 @@ class ErrorBase {
     }
 
     virtual ~ErrorBase(){ 
-                std::cout << "ERROR BASE DES" <<std::endl;
-
         delete errorMessage;
         errorMessage =  NULL;
     }

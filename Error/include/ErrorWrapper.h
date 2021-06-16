@@ -17,7 +17,7 @@ int GetFuncReturnValue_Int(void *err);
 
 bool GetFuncReturnValue_Bool(void *err);
 
-char * GetFuncReturnValue_String(void *err);
+const char * GetFuncReturnValue_String(void *err);
 
 double GetFuncReturnValue_Double(void *err);
 
